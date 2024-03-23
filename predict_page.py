@@ -49,5 +49,6 @@ def show_predict_page():
         X.astype(float)
 
         salary=regressor.predict(X)
-        st.subheader(f"The estimated Salary is ${salary[0].round(2)}")
+        formatted_salary = "${:,.2f}".format(salary[0])
+        st.subheader(f"The estimated Salary is {formatted_salary}")
 
